@@ -1,16 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule, MatTabsModule, MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/material';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TabDetailComponent } from './tab-detail/tab-detail.component';
+import { TabDetailDirective } from './tab-detail.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TabDetailComponent,
+    TabDetailDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatTabsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatInputModule
+  ],
+  entryComponents: [
+    TabDetailComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
