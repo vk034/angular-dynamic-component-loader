@@ -7,28 +7,17 @@ import { TabDetailComponent } from './tab-detail/tab-detail.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
+  component = {
+    TabDetailComponent
+  };
   tabs = [
     {
       title: "Tab 1",
       detail: "Tab 1 details",
-      component: TabDetailComponent
+      component: this.component.TabDetailComponent
     },
-    {
-      title: "Tab 2",
-      detail: "Tab 2 details",
-      component: TabDetailComponent
-    },
-    {
-      title: "Tab 3",
-      detail: "Tab 3 details",
-      component: TabDetailComponent
-    },
-    {
-      title: "Tab 4",
-      detail: "Tab 4 details",
-      component: TabDetailComponent
-    }
   ];
   selected = new FormControl(0);
 
@@ -36,7 +25,7 @@ export class AppComponent {
     this.tabs.push({
       title: `Tab ${this.tabs.length + 1}`,
       detail: `Tab ${this.tabs.length + 1} details`,
-      component: TabDetailComponent
+      component: this.component.TabDetailComponent
     });
 
     if (selectAfterAdding) {
